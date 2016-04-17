@@ -4,6 +4,7 @@
 
 	The lcm is counted twice, so we have to subtract it
 */
+import java.util.Scanner;
 
 public class p001 {
 	public static void main(String[] args) {
@@ -12,14 +13,13 @@ public class p001 {
 	}
 
 	void solve() {
-		int N = 1000 - 1;
-		int a, b, c;
-		a = 3;
-		b = 5;
-		c = lcm(a, b);
+		Scanner in = new Scanner(System.in);
+		int N = in.nextInt() - 1;
+		int a = in.nextInt();
+		int b = in.nextInt();
+		int c = lcm(a, b);
 
 		int total = a*sumToN(N/a) + b*sumToN(N/b) - c*sumToN(N/c);
-
 		System.out.println(total);
 	}
 
@@ -28,8 +28,7 @@ public class p001 {
 	}
 
 	int gcd(int a, int b) {
-	if(a == 0) return b;
-		else return gcd(b % a, a);
+		return (a == 0) ? b : gcd(b % a, a);
 	}
 
 	int lcm(int a, int b) {

@@ -17,13 +17,13 @@ int lcm(int a, int b) {
 }
 
 int main() {
-	int N = 1000 - 1;
-	int a = 3;
-	int b = 5;
+	int N, a, b;
+	cin >> N >> a >> b;
+	--N;
 	int c = lcm(a, b);
 	
 	int total = a*sumToN(N/a) + b*sumToN(N/b) - c*sumToN(N/c);
 
-	printf("%d", total);
+	printf("%d\n", total);
 	return 0;
 }
